@@ -1,0 +1,66 @@
+<?xml version="1.0" encoding="UTF-8" ?>
+<Module>
+  <ModulePrefs title="Note Box"
+    height="200"
+    author="Alexander Weiss"
+    author_email=""/>
+  <UserPref name="precontent" display_name="Attention" default_value="Nicht vergssen"/>
+  <UserPref name="content" display_name="Content" default_value="Lorem ipsum dolor sit amit"/>
+  <Content type="html">
+  <![CDATA[
+    	<style>
+      .note {
+        position: relative;
+        width: 50%;
+        padding: 1em 1.5em;
+        margin: 2em auto;
+        color: #000000;
+        background: #FFEB3B;
+        overflow: hidden;
+      }
+
+      .note:before {
+        content: "";
+        position: absolute;
+        top: 0;
+        right: 0;
+        border-width: 0 16px 16px 0;
+        border-style: solid;
+        border-color: #fff #fff #ccbc2f #ccbc2f;
+        background: #658E15;
+        -webkit-box-shadow: 0 1px 1px rgba(0,0,0,0.3), -1px 1px 1px rgba(0,0,0,0.2);
+        -moz-box-shadow: 0 1px 1px rgba(0,0,0,0.3), -1px 1px 1px rgba(0,0,0,0.2);
+        box-shadow: 0 1px 1px rgba(0,0,0,0.3), -1px 1px 1px rgba(0,0,0,0.2);
+        /* Firefox 3.0 damage limitation */
+        display: block; width: 0;
+      }
+
+      .note.rounded {
+        -moz-border-radius: 5px 0 5px 5px;
+        border-radius: 5px 0 5px 5px;
+      }
+
+      .note.rounded:before {
+        border-width: 8px;
+        border-color: #fff #fff transparent transparent;
+        -moz-border-radius: 0 0 0 5px;
+        border-radius: 0 0 0 5px;
+      }
+    </style>
+
+    <div class="note" id="notebox"> Lorem ipsum dolor sit amet, consetetur sadipscing elitr, sed diam nonumy eirmod tempor invidunt ut labore et dolore magna aliquyam erat, sed diam voluptua. At vero eos et accusam et justo duo dolores et ea rebum. </div>
+
+    <script type="text/javascript">
+      var prefs = new gadgets.Prefs();
+      var someStringPref = prefs.getString("content");
+      var precontentString = prefs.getString("precontent");
+      console.log(someStringPref);
+      console.log(precontentString);
+      var noteBoxDiv = document.getElementById('notebox');
+      noteBoxDiv.innerHTML = precontentString.bold()+ ": " + someStringPref;
+    </script>
+
+
+  ]]>
+  </Content>
+</Module>
