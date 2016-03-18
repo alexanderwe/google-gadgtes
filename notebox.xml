@@ -15,7 +15,7 @@
         padding: 1em 1.5em;
         margin: 2em auto;
         color: #000000;
-        background: #FFEB3B;
+        background: #FFF794; 
         overflow: hidden;
       }
 
@@ -27,7 +27,7 @@
         border-width: 0 16px 16px 0;
         border-style: solid;
         border-color: #fff #fff #ccbc2f #ccbc2f;
-        background: #658E15;
+        background: #EEE176;
         -webkit-box-shadow: 0 1px 1px rgba(0,0,0,0.3), -1px 1px 1px rgba(0,0,0,0.2);
         -moz-box-shadow: 0 1px 1px rgba(0,0,0,0.3), -1px 1px 1px rgba(0,0,0,0.2);
         box-shadow: 0 1px 1px rgba(0,0,0,0.3), -1px 1px 1px rgba(0,0,0,0.2);
